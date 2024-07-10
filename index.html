@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape Game Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: "Press Start 2p";
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #222;
+        color: #fff;
+        margin: 0;
+        font-family: "Press Start 2p";
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .code-input input {
+        font-size: 1.5em;
+        padding: 10px;
+        text-align: center;
+        width: 200px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .keypad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .keypad button {
+        font-size: 1.5em;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #444;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .keypad button:hover {
+        background-color: #555;
+      }
+
+      #message {
+        margin-top: 20px;
+        font-size: 1.2em;
+      }
+
+      .video-game-button {
+        font-size: 30pt;
+        text-shadow: 1px 1px pink, -1px -1px maroon;
+
+        line-height: 1.5em;
+        text-align: center;
+        display: inline-block;
+        width: 1.5em;
+        -webkit-border-radius: 0.75em;
+        -moz-border-radius: 0.75em;
+        -o-border-radius: 0.75em;
+        border-radius: 0.75em;
+        background-color: red;
+        -webkit-box-shadow: 0 0.2em maroon;
+        -moz-box-shadow: 0 0.2em maroon;
+        -o-box-shadow: 0 0.2em maroon;
+        box-shadow: 0 0.2em maroon;
+        color: red;
+        margin: 5px;
+        background-color: red;
+        background-image: -o-linear-gradient(
+          left top,
+          pink 3%,
+          red 22%,
+          maroon 99%
+        );
+        background-image: -moz-linear-gradient(
+          left top,
+          pink 3%,
+          red 22%,
+          maroon 99%
+        );
+        background-image: -webkit-linear-gradient(
+          left top,
+          pink 3%,
+          red 22%,
+          maroon 99%
+        );
+        background-image: linear-gradient(
+          left top,
+          pink 3%,
+          red 22%,
+          maroon 99%
+        );
+        cursor: pointer;
+        padding-left: 5px;
+      }
+      .start-btn {
+        font-size: 30pt;
+        text-align: center;
+        display: inline-block;
+        margin: 5px;
+        font-weight: bold;
+        padding: 10px 0 10px 10px;
+        background-color: lightgray;
+        text-shadow: -1px -1px black, 1px 1px white;
+        color: gray;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -o-border-radius: 7px;
+        border-radius: 7px;
+        box-shadow: 0 0.2em gray;
+        cursor: pointer;
+      }
+      .video-game-button:active,
+      .start-btn:active {
+        box-shadow: none;
+        position: relative;
+        top: 0.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="code-keyboard">
+        <h1>Frely's au pluriel</h1>
+        <div class="code-input">
+          <input type="text" id="code" disabled />
+        </div>
+        <div style="display: flex; flex-direction: column">
+          <div>
+            <span class="video-game-button" onclick="addNumber(1)">1</span>
+            <span class="video-game-button" onclick="addNumber(2)">2</span>
+            <span class="video-game-button" onclick="addNumber(3)">3</span>
+          </div>
+          <div>
+            <span class="video-game-button" onclick="addNumber(4)">4</span>
+            <span class="video-game-button" onclick="addNumber(5)">5</span>
+            <span class="video-game-button" onclick="addNumber(6)">6</span>
+          </div>
+          <div>
+            <span class="video-game-button" onclick="addNumber(7)">7</span>
+            <span class="video-game-button" onclick="addNumber(8)">8</span>
+            <span class="video-game-button" onclick="addNumber(9)">9</span>
+          </div>
+          <div>
+            <span class="video-game-button" onclick="addNumber(0)">0</span>
+          </div>
+          <span class="start-btn" onclick="checkCode()">OK</span>
+          <span class="start-btn" onclick="clearCode()">SUPPRIMER</span>
+        </div>
+        <div id="error" style="margin-top: 10px"></div>
+      </div>
+    </div>
+    <div id="message" style="display: none">
+      <h1>Bien jouer</h1>
+      <p>Mon dernier indice avant de découvrir qui je suis</p>
+      <p>
+        Je suis une boite dans .-.. . .--- .- .-. -.. .. -. sous la .... .- .. .
+      </p>
+      <p>Le code se cache dans la première lettre de mes lettres</p>
+    </div>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

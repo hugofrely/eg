@@ -1,4 +1,4 @@
-const correctCode = "6784";
+const correctCode = "0213";
 let enteredCode = "";
 
 function addNumber(num) {

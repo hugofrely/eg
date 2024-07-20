@@ -11,7 +11,8 @@ function addNumber(num) {
 function clearCode() {
   enteredCode = "";
   document.getElementById("code").value = enteredCode;
-  document.getElementById("message").innerText = "";
+  const element = document.getElementById("message");
+  element.style.display = "none";
 }
 
 function checkCode() {

@@ -22,7 +22,7 @@ function checkCode() {
     element.style.display = "block";
   } else {
     enteredCode = ""
-    document.getElementById("code").value = enteredCodepu;
+    document.getElementById("code").value = enteredCode;
     document.getElementById("error").innerText =
       "Code incorrect. Essayez encore.";
     document.getElementById("error").style.color = "red";

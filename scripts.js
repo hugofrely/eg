@@ -21,6 +21,7 @@ function checkCode() {
     const element = document.getElementById("message");
     element.style.display = "block";
   } else {
+    document.getElementById("code").value = "";
     document.getElementById("error").innerText =
       "Code incorrect. Essayez encore.";
     document.getElementById("error").style.color = "red";
